@@ -168,3 +168,88 @@ margin-top: 20px;
   .Question-58 { grid-area: 6 / 4 / 7 / 5; }
   .Question-59 { grid-area: 6 / 5 / 7 / 6; }
   .Question-60 { grid-area: 6 / 6 / 7 / 7; }
+
+
+  /* headers: Welcome, first round, second round, and final round */
+header {
+  text-align: center;
+  margin-top: 2px;
+  margin-bottom: 4px;  
+  margin-right: 10%;
+  margin-left: 10%;
+  padding-top: 3vh;
+  padding-bottom: 2vh;
+  padding-right: 3vw;
+  padding-left: 3vw;
+  font-size: 5vw;
+}
+
+#final-question {
+  padding: 5%;
+  padding-right: 15%;
+  padding-left: 15%;
+  background-color: #010b4d;
+}
+/* Modal container */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  justify-content: center; /* Center the modal horizontally */
+  align-items: center; /* Center the modal vertically */
+  display: flex; /* Use flexbox for centering */
+  color: black;
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  max-width: 600px; /* Max width for the modal */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px; /* Rounded corners */
+  position: relative; /* For positioning close button */
+}
+
+/* Close button */
+.close-button {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute; /* Position it absolutely within the modal content */
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+}
+
+/* Modal question */
+.modal-question {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* Modal input */
+.modal-input {
+  width: calc(100% - 40px);
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 0 auto;
+  display: block;
+}
