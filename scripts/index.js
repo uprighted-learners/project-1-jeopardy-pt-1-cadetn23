@@ -3,6 +3,14 @@ let currentQuestion = null;
 let round = 1;
 let questionsAnswered = 0;
 
+import placeholderQuestions from './placeholderQuestions.js';
+
+const values = [100, 200, 300, 400, 500];
+placeholderQuestions.forEach((q, index) => {
+    if (q.category !== 'Final') {
+        q.value = values[index % 5];
+    }
+});
 
 // let us commence 
 
@@ -23,6 +31,7 @@ function startGame() {
     fillCategories();
     addQuestionListeners();
 }
+
 
 document.addEventListener('DOMContentLoaded', startGame);
 
@@ -50,7 +59,7 @@ function enableButtons() {
 }
 
 function addQuestionListeners() {
-    const questionElements = document.querySelectorAll('[class^="cat-"][class$="100"], [class^="cat-"][class$="200"], [class^="cat-"][class$="300"], [class^="cat-"][class$="400"], [class^="cat-"][class$="500"]');
+    const questionElements = document.querySelectorAll('[class^="cat-"][class$="100"], [class^="cat-"][class$="200"], [class^="cat-"][class$="300"], [class^="cat-"][class$="400"], [class^="cat-"][class$="500"], [class^="cat-"][class$="600"], [class^="cat-"][class$="800"], [class^="cat-"][class$="1000"]');
     questionElements.forEach(element => {
         element.addEventListener('click', () => {
             const [_, category, value] = element.className.split('-');
@@ -63,7 +72,9 @@ function fillCategories() {
     const categoryElements = document.querySelectorAll('.Category');
     const uniqueCategories = [...new Set(placeholderQuestions.map(q => q.category))];
     categoryElements.forEach((element, index) => {
-        element.textContent = uniqueCategories[index];
+        if (index < uniqueCategories.length) {
+            element.textContent = uniqueCategories[index];
+        }
     });
 }
 
@@ -79,8 +90,11 @@ function selectQuestion(category, value) {
         return;
     }
 
-    const questionIndex = (category - 1) * 5 + (value / 100 - 1);
-    currentQuestionObject = placeholderQuestions[questionIndex];
+    currentQuestionObject = placeholderQuestions.find(q => q.category === categoryElements[category - 1].textContent && q.value === value);
+    if (!currentQuestionObject) {
+        alert("Question not found!");
+        return;
+    }
     currentQuestion = currentQuestionObject;
     showModal(currentQuestionObject.question);
     enableButtons();
@@ -153,19 +167,10 @@ document.querySelector('.next-round').addEventListener('click', () => {
 function startRound2() {
     placeholderQuestions.forEach(q => q.value *= 2);
     questionsAnswered = 0;
-    document.querySelector('header').textContent = "Second Round";
     updateScore();
     switchPlayer();
     fillCategories();
-    resetBoard();
-}
-
-function resetBoard() {
-    const questionElements = document.querySelectorAll('[class^="cat-"][class$="100"], [class^="cat-"][class$="200"], [class^="cat-"][class$="300"], [class^="cat-"][class$="400"], [class^="cat-"][class$="500"]');
-    questionElements.forEach((element, index) => {
-        const value = (Math.floor(index / 6) + 1) * 200;
-        element.textContent = value;
-    });
+    addQuestionListeners();
 }
 
 function startFinalRound() {
