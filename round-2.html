@@ -58,8 +58,8 @@
 
 
   <div class="buttons">
-    <button id="guess button">Guess</button>
-    <button id="pass button">Pass</button>
+    <button id="Guess">Guess</button>
+    <button id="Pass">Pass</button>
   </div>
 
   <div class="scores">
@@ -74,7 +74,17 @@
 </div>
 
 
-    <button id="next-round" onclick="window.location.href = 'final-jeopardy.html'">Final Round</button>
+<button class="next-round" onclick="window.location.href = 'final-jeopardy.html'">Final Round</button>
+
+    <div class="modal">
+      <div class="modal-content">
+        <p class="modal-question"></p>
+        <input type="text" id="Input-Box" class="modal-input" placeholder="Your Response...">
+        <button class="Guess">Guess</button>
+        <button class="Pass">Pass</button>
+      </div>
+    </div>
+
 
     <footer class="footer">Site Information</footer>
 

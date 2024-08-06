@@ -1,19 +1,3 @@
-//declare variabllllllllllllllllles
-let currentPlayerTurn = document.querySelector('.Player-Turn');
-let categoryBtns = document.querySelectorAll('.Category');
-let modal = document.querySelector('.modal');
-let guessBtn = document.querySelector('.Guess');
-let passBtn = document.querySelector('.Pass');
-let currentQuestionObject = {};
-let playerOneScore = document.querySelector('.player-one-score');
-let playerTwoScore = document.querySelector('.player-two-score');
-let playerOneAnswered = false;
-let playerTwoAnswered = false;
-
-
-const modalQuestion = document.querySelector('.modal-question');
-const closeButton = document.querySelector('.close-button');
-
 let currentPlayer = 1;
 let currentQuestion = null;
 let round = 1;
@@ -24,6 +8,15 @@ let questionsAnswered = 0;
 
 
 function startGame() {
+    currentPlayerTurn = document.querySelector('.Player-Turn');
+    categoryBtns = document.querySelectorAll('.Category');
+    modal = document.querySelector('.modal');
+    guessBtn = document.querySelector('.Guess');
+    passBtn = document.querySelector('.Pass');
+    playerOneScore = document.querySelector('.player-one-score');
+    playerTwoScore = document.querySelector('.player-two-score');
+    modalQuestion = document.querySelector('.modal-question');
+
     updateScore();
     switchPlayer();
     disableButtons();
@@ -103,8 +96,6 @@ function showModal(question) {
 function hideModal() {
     modal.style.display = 'none';
 }
-
-closeButton.addEventListener('click', hideModal);
 
 function updatePlayerScore(player, value) {
     const scoreElement = player === 1 ? playerOneScore : playerTwoScore;

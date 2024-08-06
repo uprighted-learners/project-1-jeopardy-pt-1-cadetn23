@@ -52,7 +52,7 @@
       <div class="cat-6-500">500</div>
     </div>
 
-    <textarea id="Input-Box">User input...</textarea>
+    <textarea "Input...">User input...</textarea>
 
 
     <div>
@@ -62,17 +62,27 @@
 
     <div class="scores">
       <div>
-<h2 id="player1-name">Player 1</h2>
+<h2 id="player-one-score">Player 1</h2>
 <h2>score: </h2>
 <div>
 </div>
-<h2 id="player2-name">Player 2</h2>
+<h2 id="player-two-score">Player 2</h2>
 <h2>score: </h2>
 </div>
 </div>
 
 
     <button class="next-round" onclick="window.location.href = 'round-2.html'">Next Round</button>
+
+    <div class="modal">
+      <div class="modal-content">
+        <p class="modal-question"></p>
+        <input type="text" id="Input-Box" class="modal-input" placeholder="Your Response...">
+        <button class="Guess">Guess</button>
+        <button class="Pass">Pass</button>
+      </div>
+    </div>
+
 
     <footer class="footer">Site Information</footer>
     <!-- Do not change the script source. Allows import/export to work. -->
