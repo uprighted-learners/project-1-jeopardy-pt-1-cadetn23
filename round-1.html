@@ -4,10 +4,86 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css"> 
     <title>Jeopardy</title>
   </head>
   <body>
-    <h1>Round One</h1>
+    <header>First Round</header>
+    
+    <h1 class="Player-Turn">Player Turn</h1>
+
+
+    <div class="container">
+      <div class="Category cat-1">Category</div>
+      <div class="Category cat-2">Category</div>
+      <div class="Category cat-3">Category</div>
+      <div class="Category cat-4">Category</div>
+      <div class="Category cat-5">Category</div>
+      <div class="Category cat-6">Category</div>
+      <div class="cat-1-100">100</div>
+      <div class="cat-2-100">100</div>
+      <div class="cat-3-100">100</div>
+      <div class="cat-4-100">100</div>
+      <div class="cat-5-100">100</div>
+      <div class="cat-6-100">100</div>
+      <div class="cat-1-200">200</div>
+      <div class="cat-2-200">200</div>
+      <div class="cat-3-200">200</div>
+      <div class="cat-4-200">200</div>
+      <div class="cat-5-200">200</div>
+      <div class="cat-6-200">200</div>
+      <div class="cat-1-300">300</div>
+      <div class="cat-2-300">300</div>
+      <div class="cat-3-300">300</div>
+      <div class="cat-4-300">300</div>
+      <div class="cat-5-300">300</div>
+      <div class="cat-6-300">300</div>
+      <div class="cat-1-400">400</div>
+      <div class="cat-2-400">400</div>
+      <div class="cat-3-400">400</div>
+      <div class="cat-4-400">400</div>
+      <div class="cat-5-400">400</div>
+      <div class="cat-6-400">400</div>
+      <div class="cat-1-500">500</div>
+      <div class="cat-2-500">500</div>
+      <div class="cat-3-500">500</div>
+      <div class="cat-4-500">500</div>
+      <div class="cat-5-500">500</div>
+      <div class="cat-6-500">500</div>
+    </div>
+
+    <textarea id="Input-Box">User input...</textarea>
+
+    <div>
+      <button class="Guess">Guess</button>
+      <button class="Pass">Pass</button>
+    </div>
+
+    <div class="scores">
+      <div>
+        <h2 class="player-one-score">Player 1</h2>
+<h2>score: </h2>
+<div>
+</div>
+<h2 class="player-two-score">Player 2</h2>
+<h2>score: </h2>
+</div>
+</div>
+
+
+    <button class="next-round" onclick="window.location.href = 'round-2.html'">Next Round</button>
+
+    <div class="modal">
+      <div class="modal-content">
+        <p class="modal-question"></p>
+        <input type="text" id="Input-Box" class="modal-input" placeholder="Your Response...">
+        <button class="Guess">Guess</button>
+        <button class="Pass">Pass</button>
+      </div>
+    </div>
+
+
+    <footer class="footer">Site Information</footer>
     <!-- Do not change the script source. Allows import/export to work. -->
     <script src="./scripts/index.js" type="module"></script>
   </body>

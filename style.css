@@ -1,0 +1,136 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #060ce9;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styles */
+header {
+  background-color: #060ce9;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Container Styles */
+.container, .container2 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  padding: 20px;
+  background-color: #060ce9;
+}
+
+/* Category and Question Styles */
+.Category, [class^="cat-"] {
+  background-color: #060ce9;
+  border: 2px solid #ffffff;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  color: #ffff00; /* Changed to yellow */
+}
+
+.Category {
+  font-size: 1.2rem;
+  background-color: #0000ff;
+}
+
+[class^="cat-"]:not(.Category) {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+[class^="cat-"]:not(.Category):hover {
+  background-color: #0000ff;
+}
+
+/* Player Turn and Scores */
+.Player-Turn, .scores {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.2rem;
+  color: #ffffff; /* Keeping this white for contrast */
+}
+
+/* Input and Button Styles */
+textarea, button {
+  display: block;
+  width: 80%;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #ffd700;
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #ffec8b;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #060ce9;
+  margin: 15% auto;
+  padding: 20px;
+  border: 2px solid #ffffff;
+  width: 80%;
+  max-width: 600px;
+}
+
+.modal-question {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #ffff00; /* Changed to yellow */
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #0000ff;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container, .container2 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  header {
+    font-size: 2rem;
+  }
+  
+  .Category, [class^="cat-"] {
+    font-size: 1rem;
+  }
+}
